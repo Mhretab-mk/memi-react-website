@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, Clock, MapPin, Filter, ChevronDown } from "lucide-react"
+import { ArrowRight, Calendar, Clock, MapPin } from "lucide-react"
 import {
   Select,
   SelectContent,

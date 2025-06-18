@@ -29,12 +29,6 @@ const stats = [
   },
 ]
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-}
-
 export function AboutSection() {
   return (
     <section id="about" className="relative py-20">
