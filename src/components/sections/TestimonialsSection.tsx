@@ -77,7 +77,7 @@ export function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
-                className={`bg-card rounded-2xl p-6 shadow-lg transition-all duration-500 transform ${
+                className={`bg-card rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-500 transform ${
                   index === activeIndex || index === (activeIndex + 1) % testimonials.length
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-95 absolute"

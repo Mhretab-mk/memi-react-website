@@ -31,15 +31,23 @@ const slides = [
 ]
 
 export function HomeSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ 
-      delay: 8000, 
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-      stopOnFocusIn: true,
-      rootNode: (emblaRoot) => emblaRoot.parentElement
-    }),
-  ])
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true,
+      dragFree: false,
+      containScroll: "trimSnaps",
+      align: "center",
+    },
+    [
+      Autoplay({ 
+        delay: 5000,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+        stopOnFocusIn: true,
+        rootNode: (emblaRoot) => emblaRoot.parentElement
+      })
+    ]
+  )
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -168,7 +176,7 @@ export function HomeSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="absolute left-0 top-0 h-[400px] w-[300px] rounded-2xl border bg-card p-6 shadow-lg"
+                className="absolute left-0 top-0 h-[400px] w-[300px] rounded-2xl bg-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="h-full w-full rounded-lg bg-gradient-to-br from-primary/20 to-primary/5" />
               </motion.div>
@@ -178,7 +186,7 @@ export function HomeSection() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute right-0 top-20 h-[200px] w-[250px] rounded-2xl border bg-card p-4 shadow-lg"
+                className="absolute right-0 top-20 h-[200px] w-[250px] rounded-2xl bg-card p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="h-full w-full rounded-lg bg-gradient-to-br from-primary/10 to-primary/5" />
               </motion.div>
@@ -188,7 +196,7 @@ export function HomeSection() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                className="absolute bottom-0 right-20 h-[250px] w-[200px] rounded-2xl border bg-card p-4 shadow-lg"
+                className="absolute bottom-0 right-20 h-[250px] w-[200px] rounded-2xl bg-card p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="h-full w-full rounded-lg bg-gradient-to-br from-primary/10 to-primary/5" />
               </motion.div>
@@ -220,14 +228,20 @@ export function HomeSection() {
                 key={slide.id}
                 className="embla__slide relative min-w-full flex-[0_0_100%]"
               >
+                <div className="absolute inset-0">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="h-full w-full object-cover"
+                    loading="eager"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920";
+                    }}
+                  />
+                </div>
                 <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: `url(${slide.image})`,
-                  }}
-                />
-                <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/80"
                   style={{ backgroundColor: slide.overlay }}
                 />
                 <div className="relative z-10 flex h-full items-center justify-center px-4">

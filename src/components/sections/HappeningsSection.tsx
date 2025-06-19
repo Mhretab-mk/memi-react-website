@@ -207,7 +207,7 @@ export function HappeningsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="group relative overflow-hidden rounded-xl bg-card shadow-lg transition-all hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-xl bg-card shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all flex flex-col"
                 >
                   <div className="relative h-48">
                     <img
@@ -220,7 +220,7 @@ export function HappeningsSection() {
                       {post.type}
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-semibold line-clamp-2">{post.title}</h3>
                     <p className="mt-2 text-muted-foreground line-clamp-2">{post.description}</p>
                     <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -241,10 +241,12 @@ export function HappeningsSection() {
                         </div>
                       )}
                     </div>
-                    <Button className="mt-4 w-full group" variant="outline">
-                      Read More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    <div className="mt-auto pt-4">
+                      <Button className="w-full group" variant="outline">
+                        Read More
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </div>
                   </div>
                 </motion.div>
               ))}

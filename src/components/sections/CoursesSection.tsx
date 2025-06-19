@@ -102,7 +102,7 @@ export function CoursesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card transition-all hover:shadow-lg"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-card transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="aspect-video overflow-hidden">
                   <div

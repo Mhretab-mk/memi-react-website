@@ -76,13 +76,13 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg shadow-sm"
-          : "bg-background/60 backdrop-blur-sm"
+          ? "bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 backdrop-blur-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+          : "bg-gradient-to-r from-blue-800/95 via-blue-600/95 to-blue-800/95 backdrop-blur-sm"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -92,10 +92,10 @@ export function Navbar() {
           <button
             onClick={() => handleScroll("home")}
             className={cn(
-              "relative text-xl font-bold transition-colors",
+              "relative text-2xl font-bold transition-colors",
               activeSection === "home"
-                ? "text-primary"
-                : "hover:text-primary"
+                ? "text-white"
+                : "text-white/90 hover:text-white"
             )}
           >
             <span className="relative">
@@ -103,7 +103,7 @@ export function Navbar() {
               {activeSection === "home" && (
                 <motion.span
                   layoutId="activeIndicator"
-                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-primary"
+                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-blue-300 via-white to-blue-300"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -112,7 +112,7 @@ export function Navbar() {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:space-x-1">
+        <div className="hidden md:flex md:items-center md:space-x-2">
           {navItems.map((item) => (
             <motion.button
               key={item.href}
@@ -120,17 +120,17 @@ export function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                "relative px-4 py-2 text-base font-semibold transition-colors",
+                "relative px-5 py-2.5 text-base font-semibold transition-colors",
                 activeSection === item.href.substring(1)
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-white"
+                  : "text-white/80 hover:text-white"
               )}
             >
               {item.name}
               {activeSection === item.href.substring(1) && (
                 <motion.span
                   layoutId="activeIndicator"
-                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-primary"
+                  className="absolute -bottom-1 left-0 h-0.5 w-full bg-gradient-to-r from-blue-300 via-white to-blue-300"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -139,14 +139,14 @@ export function Navbar() {
         </div>
 
         {/* Theme Toggle and Mobile Menu */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="relative rounded-full"
+                  className="relative h-10 w-10 rounded-full text-white hover:bg-white/10"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -203,7 +203,7 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="relative rounded-full md:hidden"
+                  className="relative rounded-full text-white hover:bg-white/10 md:hidden"
                 >
                   <AnimatePresence mode="wait">
                     {isMobileMenuOpen ? (
@@ -231,9 +231,9 @@ export function Navbar() {
                 </Button>
               </motion.div>
             </DrawerTrigger>
-            <DrawerContent className="border-t bg-background/95 backdrop-blur">
+            <DrawerContent className="border-t bg-primary/95 backdrop-blur">
               <DrawerHeader>
-                <DrawerTitle className="text-center">Navigation</DrawerTitle>
+                <DrawerTitle className="text-center text-white">Navigation</DrawerTitle>
               </DrawerHeader>
               <div className="grid gap-2 px-4 py-4">
                 {navItems.map((item) => (
@@ -245,8 +245,8 @@ export function Navbar() {
                     className={cn(
                       "flex items-center justify-between rounded-lg px-4 py-3 text-base font-semibold transition-colors",
                       activeSection === item.href.substring(1)
-                        ? "bg-primary/10 text-primary"
-                        : "hover:bg-muted"
+                        ? "bg-white/10 text-white"
+                        : "text-white/80 hover:bg-white/10 hover:text-white"
                     )}
                   >
                     {item.name}

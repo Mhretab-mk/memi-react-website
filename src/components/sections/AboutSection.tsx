@@ -113,7 +113,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl border bg-card p-6 transition-all hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl bg-card p-6 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="relative">
@@ -138,7 +138,7 @@ export function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-20 rounded-2xl border bg-card p-8 sm:p-12"
+          className="mt-20 rounded-2xl bg-card p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
         >
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">

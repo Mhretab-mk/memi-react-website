@@ -71,7 +71,7 @@ export function MeetOurTeam() {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="group relative bg-card rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
+              className="group relative bg-card rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">

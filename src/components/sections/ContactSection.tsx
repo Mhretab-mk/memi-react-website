@@ -19,7 +19,7 @@ export function ContactSection() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Contact Info Cards */}
             <div className="space-y-6">
-              <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-card rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-shadow duration-300">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Mail className="h-6 w-6 text-primary" />
@@ -37,7 +37,7 @@ export function ContactSection() {
                 </a>
               </div>
 
-              <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-card rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-shadow duration-300">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Phone className="h-6 w-6 text-primary" />
@@ -55,7 +55,7 @@ export function ContactSection() {
                 </a>
               </div>
 
-              <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-card rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-shadow duration-300">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <MapPin className="h-6 w-6 text-primary" />
