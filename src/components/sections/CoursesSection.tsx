@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Clock, Users, BookOpen, Star } from "lucide-react"
 import { TestimonialsSection } from "./TestimonialsSection"
 
+
 const courses = [
   {
     id: 1,

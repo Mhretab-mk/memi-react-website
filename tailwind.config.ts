@@ -19,6 +19,35 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Sora', 'system-ui', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        mono: ['DM Sans', 'monospace'],
+      },
+      fontSize: {
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.01em' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.02em' }],
+        '5xl': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+        '6xl': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.04em' }],
+      },
+      letterSpacing: {
+        'tightest': '-.075em',
+        'tighter': '-.05em',
+        'tight': '-.025em',
+        'normal': '0',
+        'wide': '.025em',
+        'wider': '.05em',
+        'widest': '.25em',
+      },
+      lineHeight: {
+        'tighter': '1.1',
+        'tight': '1.25',
+        'snug': '1.375',
+        'normal': '1.5',
+        'relaxed': '1.625',
+        'loose': '2',
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

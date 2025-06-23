@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function scrollToSection(sectionId: string) {
   const element = document.getElementById(sectionId)
   if (element) {
-    const navbarHeight = 64 // Height of the navbar in pixels
+    const navbarHeight = 74 // Height of the navbar in pixels
     const elementPosition = element.getBoundingClientRect().top
     const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
 
